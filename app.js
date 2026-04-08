@@ -17,9 +17,11 @@ app.get('/',(req, res)=> {
                 name: i.name,
                 address: i.address,
                 rating: i.rating,
-                cuisines: i.cuisines.map(k => k.name).join(', ')
+                cuisines: i.cuisines.map(k => k.name).join(', '),
+                logo: i.logoUrl
             }
         });
+        console.log('restaurants:',restaurant);
         res.render('index', {restaurant});
     })
 });
