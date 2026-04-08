@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+<body>
+    <h1>Top 10 Restaurants</h1>
+
+<ul>
+  {{#each restaurant}}
+    <li>
+      <h2>{{name}}</h3>
+      <h3>Rating: {{rating.starRating}}/5</h3>
+      <h3>Cuisenes: {{cuisines}}</h3>
+      <h4>{{address.city}},</h4>
+      <h4>{{address.firstLine}},</h4>
+      <h4>{{address.postalCode}}</h4>
+      
+    </li>
+  {{/each}}
+</ul>
+</body>
+</html>
