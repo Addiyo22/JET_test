@@ -7,20 +7,32 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
 </head>
 <body>
-    <h1>Top 10 Restaurants</h1>
-
+    <div class="flexdiv">
+    <form method="GET" action="/" class="inputform">
+        <input 
+            type="text" 
+            name="postcode" 
+            value="{{postcode}}"
+            placeholder="Enter postcode" 
+            class="textbox"
+        />
+    <button type="submit" class="button">Search</button>
+    </form>
+    {{#if postcode}}
+    <h1>Restaurants for {{postcode}}</h1>
+    {{/if}}
 <ul>
-  {{#each restaurant}}
-    <li>
-      <h2><img src={{logo}} alt="">{{name}}</h3>
+  {{#each restaurants}}
+    <li class="cardContainer">
+      <div class="imageContainer"><div><img src="{{logo}}" alt="restaurant logo"></div><h2 class="nameContainer">{{name}}</h2></div>
       <h3>Rating: {{rating.starRating}}/5</h3>
       <h3>Cuisenes: {{cuisines}}</h3>
-      <h4>{{address.city}},</h4>
-      <h4>{{address.firstLine}},</h4>
-      <h4>{{address.postalCode}}</h4>
+      <h4>Address: {{address.city}}, {{address.firstLine}}</h4>
+      <h4>Post Code: {{address.postalCode}}</h4>
       
     </li>
   {{/each}}
 </ul>
+</div>
 </body>
 </html>

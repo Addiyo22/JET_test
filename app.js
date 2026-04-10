@@ -10,9 +10,10 @@ app.set('views', __dirname + '/views');
 app.set('view engine','hbs');
 
 app.get('/',(req, res)=> {
-    axios.get('https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/TW197LT')
+    const postcode = req.query.postcode;
+    axios.get(`https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/${postcode}`)
     .then((response)=>{
-        const restaurant = response.data.restaurants.slice(0,10).map(i => {
+        const restaurants = response.data.restaurants.slice(0,10).map(i => {
             return {
                 name: i.name,
                 address: i.address,
@@ -21,8 +22,9 @@ app.get('/',(req, res)=> {
                 logo: i.logoUrl
             }
         });
-        console.log('restaurants:',restaurant);
-        res.render('index', {restaurant});
+        console.log('restaurants:',restaurants);
+        console.log('postcode:',postcode)
+        res.render('index', {restaurants, postcode});
     })
 });
 
