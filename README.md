@@ -1,7 +1,7 @@
 # Restaurant Finder
 
 ## Description
-A simple Node.js + Express web application that allows users to search for restaurants by postcode using the Just Eat API. The app dynamically fetches and displays restaurant data using Handlebars templates.
+A simple Node.js + Express web application that allows users to search for restaurants by postcode using the Just Eat API. The app dynamically fetches and displays restaurant data using Handlebars template.
 
 
 ## MVP
@@ -32,7 +32,7 @@ A simple Node.js + Express web application that allows users to search for resta
 ## Build & Run
 1) Open Text Editor
     - Use a Text Editor eg. Visual Studio Code
-    
+
 2) Install Depedencies
     - npm install
     - npm i axios
